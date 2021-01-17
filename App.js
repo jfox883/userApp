@@ -1,21 +1,36 @@
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+import mainTabs from "./navigation/mainTabs";
+import { Messages, User } from "./screens";
+import useColorScheme from './hooks/useColorScheme';
+
+const Stack = createStackNavigator();
+
+const App = () => {
+  const colorScheme = useColorScheme();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <SafeAreaProvider>
+      <NavigationContainer
+      theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false
+          }}
+          initialRouteName={"Home"}
+        >
+          <Stack.Screen name="Home" component={mainTabs} />
+          <Stack.Screen name="Messages" component={Messages} />
+          <Stack.Screen name="User" component={User} />
+        </Stack.Navigator>
+      </NavigationContainer>
+      <StatusBar />
+    </SafeAreaProvider>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
