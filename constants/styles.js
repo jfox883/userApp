@@ -24,7 +24,9 @@ const styles = StyleSheet.create({
     },
     heading2: {
         fontSize: SIZES.h4,
-        fontWeight: '300'
+        fontWeight: '500',
+        paddingBottom: 5,
+        color: COLORS.darkgray
     }
 })
 

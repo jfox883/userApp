@@ -1,37 +1,26 @@
 import { Dimensions } from "react-native"
 const { width, height } = Dimensions.get("window")
 const tintColorLight = '#2f95dc';
-const tintColorDark = '#fff'
 
 export const COLORS = {
-    light: {
-        primary: "#345eeb",
-        secondary: "#CDCDD2",
+    primary: "#345eeb",
+    secondary: "#CDCDD2",
 
-        black: "#1E1F20",
-        white: "#FFFFFF",
+    black: "#1E1F20",
+    white: "#FFFFFF",
 
-        lightGray: "#F5F5F6",
-        lightGray2: "#F6F6F7",
-        lightGray3: "#EFEFF1",
-        lightGray4: "#F8F8F9",
-        transparent: "transparent",
-        darkgray: '#898C95',
+    lightGray: "#F5F5F6",
+    lightGray2: "#F6F6F7",
+    lightGray3: "#EFEFF1",
+    lightGray4: "#F8F8F9",
+    transparent: "transparent",
+    darkgray: '#898C95',
 
-        text: '#000',
-        background: '#fff',
-        tint: tintColorLight,
-        tabIconDefault: '#ccc',
-        tabIconSelected: tintColorLight,
-    },
-    dark: {
-        text: '#fff',
-        background: '#000',
-        tint: tintColorDark,
-        tabIconDefault: '#ccc',
-        tabIconSelected: tintColorDark,
-    }
-    
+    text: '#000',
+    background: '#fff',
+    tint: tintColorLight,
+    tabIconDefault: '#ccc',
+    tabIconSelected: tintColorLight,   
 };
 
 export const SIZES = {

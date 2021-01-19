@@ -5,19 +5,17 @@ import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom
 
 import { Home, Messages, User } from "../screens";
 import { COLORS, icons } from "../constants";
-import useColorScheme from '../hooks/useColorScheme';
 
 
 const Tab = createBottomTabNavigator();
 
 const mainTabs = () => {
-    const colorScheme = useColorScheme();
 
     return (
         <Tab.Navigator
             tabBarOptions={{
                 showLabel: false,
-                activeTintColor: COLORS[colorScheme].tint
+                activeTintColor: COLORS.tint
             }}
         >
             <Tab.Screen 
@@ -31,7 +29,7 @@ const mainTabs = () => {
                             style={{
                                 width: 25,
                                 height: 25,
-                                tintColor: focused ? COLORS[colorScheme].primary : COLORS[colorScheme].secondary
+                                tintColor: focused ? COLORS.primary : COLORS.secondary
                             }}
                         />
                     )
@@ -48,7 +46,7 @@ const mainTabs = () => {
                             style={{
                                 width: 25,
                                 height: 25,
-                                tintColor: focused ? COLORS[colorScheme].primary : COLORS[colorScheme].secondary
+                                tintColor: focused ? COLORS.primary : COLORS.secondary
                             }}
                         />
                     )
@@ -65,7 +63,7 @@ const mainTabs = () => {
                             style={{
                                 width: 25,
                                 height: 25,
-                                tintColor: focused ? COLORS[colorScheme].primary : COLORS[colorScheme].secondary
+                                tintColor: focused ? COLORS.primary : COLORS.secondary
                             }}
                         />
                     )
