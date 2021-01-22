@@ -5,7 +5,8 @@ import styles from '../constants/styles'
 const Messages = () => {
     return (
         <SafeAreaView style={styles.container}>
-            <Text>Messages</Text>
+            <Text style={styles.shadow, styles.heading1}>Enviar</Text>
+            
         </SafeAreaView>
     )
 }
