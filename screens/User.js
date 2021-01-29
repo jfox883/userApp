@@ -4,8 +4,10 @@ import styles from '../constants/styles';
 
 const User = () => {
     return (
-       <SafeAreaView style={styles.container}>
-            <Text>User</Text>
+        <SafeAreaView style={styles.container}>
+            <Text style={styles.shadow, styles.heading1}>INFORMACION PERSONAL</Text>
+            
+        
         </SafeAreaView>
     )
 }

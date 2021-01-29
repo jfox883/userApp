@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react'
 import { 
     View,
     Text,
-    StyleSheet,
     RefreshControl,
     SafeAreaView,
     FlatList,
@@ -11,6 +10,7 @@ import {
 } from 'react-native'
 import { icons, COLORS, SIZES } from "../constants";
 import styles from "../constants/styles";
+import * as Animation from 'react-native-animatable';
 import * as Notifications from 'expo-notifications';
 import Constants from 'expo-constants'
 
@@ -37,6 +37,7 @@ const Home = () => {
 
     const onRefresh = React.useCallback(() => {
         setRefreshing(true);
+        setMessages(messagesData)
     
         wait(2000).then(() => setRefreshing(false));
     }, []);
@@ -128,7 +129,7 @@ const Home = () => {
                             width: 25,
                             height: 25,
                             marginLeft: SIZES.padding,
-                            tintColor: (item.type == 0) ? '#31aaeb' : '#2deb49'
+                            tintColor: (item.type == 0) ? '#31aaeb' : COLORS.green
                         }}
                     />
                     <View>
@@ -153,19 +154,21 @@ const Home = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Text style={styles.shadow, styles.heading1}>Notificaciones</Text>
-            <FlatList 
-                data={messages}
-                keyExtractor={item => `${item.id}`}
-                renderItem={renderList}
-                refreshControl={
-                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>
-                }
-                contentContainerStyle= {{
-                    paddingHorizontal: SIZES.padding,
-                    paddingBottom: 30,
-                }}
-            />
+            <Text style={styles.shadow, styles.heading1}>NOVEDADES</Text>
+            <Animation.View animation="fadeInUpBig">
+                <FlatList 
+                    data={messages}
+                    keyExtractor={item => `${item.id}`}
+                    renderItem={renderList}
+                    refreshControl={
+                        <RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>
+                    }
+                    contentContainerStyle= {{
+                        paddingHorizontal: SIZES.padding,
+                        paddingBottom: 30,
+                    }}
+                />
+            </Animation.View>
         </SafeAreaView>
     )
 }
@@ -173,8 +176,8 @@ const Home = () => {
 const messagesData = [
     {
         id: 1,
-        title: 'Titulo del Mensaje',
-        msj: 'Es un mensale de prueba para diseñar la pantalla principal y el listado de notificacions',
+        title: 'Mensaje Urgente!!!',
+        msj: 'Es un mensale de prueba para mostrar la pantalla principal y el listado de notificaciones',
         type: 0,
         date: '15/01/21',
         time: '13:55',
@@ -182,7 +185,7 @@ const messagesData = [
     },
     {
         id: 2,
-        title: 'Título del mensaje 2',
+        title: 'Mensaje 2...',
         msj: 'Es un segundo mensaje en al lista de notificaciones...',
         type: 0,
         date: '12/01/21',
@@ -200,7 +203,7 @@ const messagesData = [
     },
     {
         id: 4,
-        title: 'Titulo del Mensaje 3',
+        title: 'Título de Otro mensaje.',
         msj: 'React Native is an open-source mobile application framework created by Facebook, Inc. It is used to develop applications for Android, Android TV, iOS, macOS, tvOS, Web, Windows and UWP by enabling developers to use Reacts framework along with native platform capabilities',
         type: 0,
         date: '15/01/21',
@@ -209,7 +212,7 @@ const messagesData = [
     },
     {
         id: 5,
-        title: 'Título del mensaje 4',
+        title: 'Importante!!!',
         msj: 'Expo is an open-source platform for making universal native apps for Android, iOS, and the web with JavaScript and React.   ',
         type: 1,
         date: '12/01/21',

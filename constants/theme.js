@@ -8,11 +8,13 @@ export const COLORS = {
 
     black: "#1E1F20",
     white: "#FFFFFF",
+    red: "#bf0202",
+    green: "#09a607",
 
-    lightGray: "#F5F5F6",
-    lightGray2: "#F6F6F7",
-    lightGray3: "#EFEFF1",
-    lightGray4: "#F8F8F9",
+    lightGray: "#f2f2f2",
+    lightGray2: "#e6e6e6",
+    lightGray3: "#d9d9d9",
+    lightGray4: "#cccccc",
     transparent: "transparent",
     darkgray: '#898C95',
 

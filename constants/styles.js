@@ -4,8 +4,9 @@ import { COLORS, SIZES } from "../constants";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: COLORS.lightGray4,
-        top: Platform.OS === "android" ? StatusBar.currentHeight : 0
+        backgroundColor: COLORS.lightGray1,
+        top: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+        marginBottom: Platform.OS === "android" ? 30 : 0
     },
     shadow: {
         shadowColor: "#000",
@@ -18,15 +19,35 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     heading1: {
-        fontSize: SIZES.h1,
+        fontSize: SIZES.h3,
         fontWeight: '400',
-        padding: SIZES.padding
+        paddingVertical: SIZES.padding,
+        paddingHorizontal: SIZES.padding * 2,
+        color: COLORS.darkgray
     },
     heading2: {
         fontSize: SIZES.h4,
         fontWeight: '500',
         paddingBottom: 5,
         color: COLORS.darkgray
+    },
+    mainButton: {
+        width: '40%',
+        height: 40,
+        marginHorizontal: 5,
+        borderRadius: SIZES.radius,
+        backgroundColor: COLORS.green,
+        justifyContent: 'center',
+        alignContent: 'center',
+    },
+    secondButton: {
+        width: '40%',
+        height: 40,
+        marginHorizontal: 5,
+        borderRadius: SIZES.radius,
+        backgroundColor: COLORS.red,
+        justifyContent: 'center',
+        alignContent: 'center',
     }
 })
 
