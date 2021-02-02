@@ -31,6 +31,12 @@ const styles = StyleSheet.create({
         paddingBottom: 5,
         color: COLORS.darkgray
     },
+    heading3: {
+        fontSize: SIZES.h6,
+        fontWeight: '400',
+        padding: 5,
+        color: COLORS.darkgray
+    },
     mainButton: {
         width: '40%',
         height: 40,
@@ -48,6 +54,9 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.red,
         justifyContent: 'center',
         alignContent: 'center',
+    },
+    avatar: {
+        marginLeft: 10
     }
 })
 
