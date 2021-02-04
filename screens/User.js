@@ -207,21 +207,21 @@ const User = () => {
 const usuarioData = {
     datosPersonales: {
         nombre: 'Jonathan Alex Fox',
-        dni: '25.555.553',
+        dni: '95.712.883',
         fecha_nacimiento: '28/05/1980',
         lugar_nacimiento: 'Maracaibo',
         estado_civil: 'Casado'
     },
     datosContacto: {
         telefono: '+54 9 11 4545-4545',
-        celular: '+54 9 11 2255-6699',
+        celular: '+54 9 11 2250-7622',
         email: 'j.fox@outlook.com',
-        direccion: 'Charcas 1459, Piso 7 Depto A'
+        direccion: 'Galicia 974, Piso 2 Depto B'
     },
     datosLaborales: {
         fecha_ingreso: '29/09/2017',
-        sueldo_bruto: '85.452,55',
-        puesto: 'Programador React Native',
+        sueldo_bruto: '45.000,00',
+        puesto: 'Analista IT',
         responsable: 'Jonathan Fox',
         departamento: 'Informática y Tecnología',
         obra_social: 'OSECAC'
